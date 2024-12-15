@@ -1,0 +1,295 @@
+/* General Styles */
+:root {
+  --hulu-black: #0B0C0F;
+  --hulu-dark-gray: #121317;
+  --hulu-green: #1CE783;
+  --text-primary: #FFFFFF;
+  --text-secondary: #B3B3B3;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Graphik', 'Roboto', sans-serif;
+}
+
+body {
+  background-color: var(--hulu-black);
+  color: var(--text-primary);
+}
+
+.movie-details-container {
+  width: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
+.movie-details-header {
+  position: relative;
+  width: 100%;
+  min-height: 80vh;
+  background-color: var(--hulu-black);
+  background-size: cover;
+  background-position: center;
+}
+
+.movie-details-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+.movie-poster-container {
+  flex: 0 0 350px;
+  margin-right: 2rem;
+}
+
+.movie-poster {
+  width: 100%;
+  height: 500px;  /* Fixed height for uniformity */
+  object-fit: cover; /* Ensures the image covers the entire box without distortion */
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  transition: transform 0.3s ease;
+}
+
+.movie-poster:hover {
+  transform: scale(1.05);
+}
+
+.movie-info-container {
+  flex: 1;
+  max-width: 600px;
+}
+
+.movie-title {
+  font-size: 3rem;
+  color: var(--hulu-green);
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.movie-details-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 1rem;
+  color: var(--text-secondary);
+}
+
+.movie-rating {
+  color: var(--hulu-green);
+  font-weight: bold;
+}
+
+.movie-description {
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.movie-action-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.btn-play,
+.btn-more-info,
+.btn-watchlist {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-play {
+  background-color: var(--text-primary);
+  color: var(--hulu-black);
+}
+
+.btn-more-info {
+  background-color: rgba(255,255,255,0.2);
+  color: var(--text-primary);
+}
+
+.btn-watchlist {
+  background-color: transparent;
+  color: var(--text-primary);
+  border: 2px solid var(--text-secondary);
+}
+
+.movie-video-section {
+  width: 100%;
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 2rem;
+}
+
+.video-container {
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.movie-trailer {
+  width: 100%;
+  height: 600px;  /* Fixed height for uniformity */
+  border: none;
+}
+
+/* Loading Spinner */
+.movie-details-loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--hulu-black);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 9999;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: var(--hulu-green);
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .movie-details-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .movie-poster-container {
+    margin-right: 0;
+    margin-bottom: 2rem;
+    max-width: 350px;
+  }
+
+  .movie-action-buttons {
+    justify-content: center;
+  }
+}
+
+/* Trailer Popup Styles */
+.trailer-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.trailer-popup-content {
+  position: relative;
+  width: 90%;
+  max-width: 1200px;
+  max-height: 80vh;
+  background-color: transparent;
+}
+
+.trailer-popup-iframe {
+  width: 100%;
+  height: 70vh;  /* Fixed height for uniformity */
+  border: none;
+  border-radius: 8px;
+}
+
+.trailer-close-btn {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 40px;
+  cursor: pointer;
+  z-index: 1001;
+  transition: color 0.3s ease;
+}
+
+.trailer-close-btn:hover {
+  color: var(--hulu-green);
+}
+
+/* Responsive Trailer Popup */
+@media (max-width: 768px) {
+  .trailer-popup-iframe {
+    height: 50vh;  /* Adjust the height for smaller screens */
+  }
+}
+.play-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.play-popup-content {
+  position: relative;
+  width: 80%;
+  max-width: 900px;
+  height: 80%;
+  background: #fff;
+}
+
+.play-close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 30px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.play-popup-iframe {
+  width: 100%;
+  height: 100%;
+}

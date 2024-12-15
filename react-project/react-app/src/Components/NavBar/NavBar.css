@@ -1,0 +1,364 @@
+/* Global styles */
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;700&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  font-family: "Rubik", sans-serif;
+  background-color: #000;
+  color: #fff;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* Navbar Header Styles */
+.navbar-header-xyz {
+  position: relative;
+  background: 
+    linear-gradient(
+      rgba(0, 0, 0, 0.76) 15.54%,
+      rgba(0, 0, 0, 0.192) 60.23%,
+      rgba(0, 0, 0, 0.01) 100%
+    ),
+    url('https://hulu-welcome.netlify.app/static/media/hulu-background.947968eed8819a505079.jpg') no-repeat center center;
+  background-size: cover;
+  padding: 20px 40px;
+  overflow: hidden;
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Navbar Navigation */
+.navbar-nav-abc {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+.navbar-nav-abc ul {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.navbar-nav-abc ul:first-child {
+  justify-content: flex-start;
+}
+
+.navbar-nav-abc ul li {
+  margin: 0 10px;
+}
+
+/* Navigation Links */
+.navbar-home-btn,
+.navbar-watchlist-btn {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  padding: 10px;
+  transition: color 0.3s ease;
+}
+
+.navbar-home-btn:hover,
+.navbar-watchlist-btn:hover {
+  color: #1db954;
+}
+
+/* Action Buttons */
+.navbar-logout-btn-qwe,
+.navbar-login-btn-zxc,
+.navbar-profile-btn-asd {
+  background-color: #1f1f1f;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 12px 20px;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-logout-btn-qwe:hover,
+.navbar-profile-btn-asd:hover,
+.navbar-login-btn-zxc:hover {
+  background-color: #1db954;
+  color: #000;
+  transform: scale(1.05);
+}
+
+.navbar-logout-btn-qwe:focus,
+.navbar-profile-btn-asd:focus,
+.navbar-login-btn-zxc:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(29, 185, 84, 0.5);
+}
+
+.navbar-logout-btn-qwe:active,
+.navbar-profile-btn-asd:active,
+.navbar-login-btn-zxc:active {
+  transform: scale(0.98);
+}
+
+/* Header Content */
+.navbar-header-content-pqr {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 40px 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.navbar-logo-xyz {
+  width: 200px;
+  max-height: 100px;
+  object-fit: contain;
+  margin-bottom: 20px;
+}
+
+.navbar-header-text-1-lmn {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #fff;
+  max-width: 800px;
+  margin-bottom: 20px;
+}
+
+.navbar-header-text-2-ghi {
+  font-size: 1.2rem;
+  color: #fff;
+  max-width: 600px;
+  margin-bottom: 30px;
+}
+
+/* Call to Action Button */
+.navbar-btn-cta-vbn {
+  display: inline-block;
+  background: #fff;
+  color: #333;
+  min-width: 250px;
+  padding: 15px 30px;
+  font-size: 16px;
+  font-weight: 700;
+  border: none;
+  border-radius: 5px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  text-transform: uppercase;
+  text-align: center;
+  transition: all 0.3s ease;
+  margin-bottom: 20px;
+  text-decoration:none;
+}
+
+.navbar-btn-cta-vbn:hover {
+  background-color: #1db954;
+  color: #fff;
+  transform: scale(1.05);
+}
+
+/* Legal Text */
+.navbar-legal-text-efg {
+  font-size: 0.8rem;
+  color: #ccc;
+  max-width: 500px;
+  text-align: center;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .navbar-header-xyz {
+    padding: 10px 15px;
+    min-height: 400px;
+  }
+
+  .navbar-nav-abc ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navbar-header-text-1-lmn {
+    font-size: 2rem;
+  }
+
+  .navbar-header-text-2-ghi {
+    font-size: 1rem;
+  }
+
+  .navbar-btn-cta-vbn {
+    min-width: 200px;
+    padding: 12px 24px;
+  }
+}
+
+/* Navbar Container */
+.navbar {
+  background-color: transparent; /* Sophisticated gradient background */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 30px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.7); /* Enhanced shadow */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  border-bottom: 1px solid rgba(30, 231, 131, 0.2); /* Subtle border with theme color */
+}
+
+/* Navbar Links Container */
+.navbar-links {
+  display: flex;
+  list-style: none;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+}
+
+/* Navbar Links */
+.navbar-link {
+  color: #1CE783;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  position: relative;
+  letter-spacing: 0.5px;
+}
+
+/* Hover Effects with More Dramatic Transformation */
+.navbar-link:hover {
+  color: #fff;
+  transform: scale(1.05);
+  text-shadow: 0 0 15px rgba(28, 231, 131, 0.7);
+}
+
+.navbar-link::before {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: linear-gradient(to right, #1CE783, #0ff); /* Gradient underline */
+  transition: width 0.4s ease-in-out;
+}
+
+.navbar-link:hover::before {
+  width: 100%;
+}
+
+/* Navbar Buttons with Glassmorphism Effect */
+.navbar-button {
+  background: rgba(28, 231, 131, 0.1);
+  border: 1px solid #1CE783;
+  color: #1CE783;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.navbar-button:hover {
+  background: #1CE783;
+  color: #000;
+  box-shadow: 0 0 20px rgba(28, 231, 131, 0.5);
+  transform: translateY(-3px);
+}
+
+/* Logout Button Specific Styling */
+.logout-button {
+  position: absolute;
+  top: 50%;
+  right: 30px; /* Slight padding from the edge */
+  transform: translateY(-50%);
+}
+
+/* Profile Link Animation */
+.profile-link {
+  color: #1CE783;
+  position: relative;
+  overflow: hidden;
+}
+
+.profile-link:hover::before {
+  content: '👤';
+  position: absolute;
+  left: -30px;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 1;
+  transition: all 0.4s ease;
+}
+
+/* Login Link Specific Styling */
+.login-link {
+  font-style: italic;
+  color: #1CE783;
+  position: relative;
+  padding-bottom: 3px;
+}
+
+.login-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(to right, #1CE783, #0ff);
+  transition: width 0.3s ease;
+}
+
+.login-link:hover::after {
+  width: 100%;
+}
+.navbar-user-avatar {
+  margin-left: 10px;
+}
+
+.navbar-avatar-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover; /* Ensures the avatar is cropped to a circle */
+}
+.navbar-avatar-text {
+  color: #1CE783;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  position: relative;
+  letter-spacing: 0.5px;
+}
+
+.navbar-avatar-text:hover {
+  color: #fff;
+  transform: scale(1.05);
+  text-shadow: 0 0 15px rgba(28, 231, 131, 0.7);
+}

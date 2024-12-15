@@ -1,0 +1,67 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;700&display=swap");
+
+.sub-header {
+  display: grid;
+  grid-template-columns: 2fr 4fr 2fr;
+  gap: 40px;
+  align-items: center;
+  padding: 30px 40px;
+  background: linear-gradient(
+    318.68deg,
+    #0f495c 0%,
+    #0d3640 49.72%,
+    #08141f 100%
+  );
+}
+
+.sub-header img {
+  max-width: 100%;
+}
+
+.sub-header h3 {
+  font-size: 26px;
+  font-weight: 300;
+  color: orange;
+}
+
+.sub-header h4 {
+  color: #00ed82;
+  font-size: 13px;
+  text-transform: uppercase;
+}
+
+.sub-header .btn {
+  display: inline-block;
+  background: none;
+  color: #fff;
+  border: 2px solid #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.sub-header .btn:hover {
+  border-color: #ccc;
+  color: #fff;
+}
+
+.sub-header .sub-link {
+  display: block;
+  color: #ccc;
+  font-size: 12px;
+  margin-top: 5px;
+  text-decoration: underline;
+}
+
+.sub-header > div:last-of-type {
+  justify-self: end;
+  align-self: end;
+  text-align: right;
+}
+
+.sub-header > div:last-of-type .sub-link {
+  text-align: center;
+}

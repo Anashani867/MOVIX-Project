@@ -1,0 +1,131 @@
+/* Footer */
+.footer {
+  background-color: #000;
+  color: #fff;
+  padding: 60px 0;
+}
+
+.footer a {
+  color: #8c8c8c;
+  transition: color 0.3s ease;
+}
+
+.footer a:hover {
+  color: #00ed82; /* Hulu's signature green */
+  text-decoration: none;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+.footer-lists {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.footer-lists .footer-list {
+  flex: 1;
+  margin-right: 30px;
+  margin-bottom: 20px;
+}
+
+.footer-lists .list-head {
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #00ed82;
+  margin-bottom: 15px;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+.footer-lists ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-lists ul li {
+  margin-bottom: 10px;
+}
+
+.footer-lists ul li a {
+  font-size: 14px;
+  color: #8c8c8c;
+}
+
+.divider {
+  width: 100%;
+  height: 1px;
+  background-color: #333;
+  margin: 30px 0;
+}
+
+.social-icons {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.social-icons a {
+  margin-right: 20px;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.social-icons a:hover {
+  opacity: 1;
+}
+
+.social-icons img {
+  width: 25px;
+  height: 25px;
+  filter: grayscale(100%) brightness(200%);
+  transition: filter 0.3s ease;
+}
+
+.social-icons a:hover img {
+  filter: grayscale(0%) brightness(100%);
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 30px;
+  border-top: 1px solid #333;
+}
+
+.footer-bottom .legal-text {
+  color: #8c8c8c;
+  font-size: 12px;
+}
+
+.footer-bottom .copyright {
+  color: #8c8c8c;
+  font-size: 12px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .footer-lists {
+    flex-direction: column;
+  }
+
+  .footer-lists .footer-list {
+    margin-right: 0;
+    margin-bottom: 30px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-bottom .legal-text,
+  .footer-bottom .copyright {
+    margin-bottom: 15px;
+  }
+}

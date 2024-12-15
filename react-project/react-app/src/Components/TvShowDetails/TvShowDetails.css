@@ -1,0 +1,227 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+:root {
+    --hulu-black: #060606;
+    --hulu-dark-gray: #121212;
+    --hulu-green: #1CE783;
+    --hulu-gray: #2C2C2C;
+    --text-primary: #FFFFFF;
+    --text-secondary: #A9A9A9;
+    --highlight-green: #1CE783;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--hulu-black);
+    color: var(--text-primary);
+    line-height: 1.5;
+    scroll-behavior: smooth;
+}
+
+.show-details-container {
+    max-width: 1920px;
+    margin: 0 auto;
+    background-color: var(--hulu-black);
+}
+
+.show-details-header {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 0 5%;
+    overflow: hidden;
+}
+
+.show-details-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9));
+    z-index: 1;
+}
+
+.show-details-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+}
+
+.show-poster-container {
+    flex-shrink: 0;
+}
+
+.show-poster {
+    width: 350px;
+    height: 525px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+}
+
+.show-poster:hover {
+    transform: scale(1.05);
+}
+
+.show-info-container {
+    flex-grow: 1;
+}
+
+.show-info {
+    max-width: 700px;
+}
+
+.show-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: var(--hulu-green);
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.show-details-meta {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.show-description {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.show-action-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.btn-play, .btn-watchlist {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 24px;
+    border-radius: 4px;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: none;
+}
+
+.btn-play {
+    background-color: var(--hulu-green);
+    color: var(--hulu-black);
+}
+
+.btn-play:hover {
+    background-color: #17d17b;
+}
+
+.btn-watchlist {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--text-primary);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.btn-watchlist:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.trailer-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.trailer-popup-content {
+    position: relative;
+    width: 90%;
+    max-width: 1200px;
+    aspect-ratio: 16 / 9;
+}
+
+.trailer-close-btn {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.trailer-popup-iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 8px;
+}
+
+.show-details-loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--hulu-black);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 9999;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: var(--hulu-green);
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .show-details-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+    }
+
+    .show-poster {
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+    }
+
+    .show-action-buttons {
+        justify-content: center;
+    }
+}

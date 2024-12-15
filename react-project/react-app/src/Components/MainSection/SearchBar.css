@@ -1,0 +1,31 @@
+.search-bar-section {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.search-bar-wrapper {
+  position: relative;
+}
+
+.search-bar {
+  width: 100%;
+  background-color: #141414;
+  color: white;
+  border: 1px solid #333;
+  border-radius: 6px;
+  padding: 10px 15px;
+  font-size: 16px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.search-bar:focus {
+  border-color: #1ed760; /* Hulu's green accent */
+  box-shadow: 0 0 0 2px rgba(30, 215, 96, 0.3);
+}
+
+.search-bar::placeholder {
+  color: #888;
+}
